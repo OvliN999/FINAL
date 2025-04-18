@@ -109,6 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-da62.up.railway.app',
+    'https://*.now.sh',  # Optional, if you are using Now.sh domains
+]
+
 
 
 # Internationalization
