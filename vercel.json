@@ -1,17 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "RentalCar/wsgi.py",
-      "use": "@vercel/python",
-      "config": { 
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.10.11",
-        "installCommand": "pip install -r requirements.txt",
-        "buildCommand": "python manage.py collectstatic --noinput"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/static/(.*)",
