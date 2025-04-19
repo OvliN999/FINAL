@@ -1,13 +1,29 @@
 {
-    "builds": [{
-        "src": "RentalCar/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10.11" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "RentalCar/wsgi.py"
-        }
-    ]
+  "builds": [
+    {
+      "src": "RentalCar/wsgi.py",
+      "use": "@vercel/python",
+      "config": { 
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.10.11"
+      }
+    }
+  ],
+  "routes": [
+    // Serve static files
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    // Serve media files
+    {
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    // Django routes
+    {
+      "src": "/(.*)",
+      "dest": "RentalCar/wsgi.py"
+    }
+  ]
 }
