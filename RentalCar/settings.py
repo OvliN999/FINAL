@@ -26,9 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-naj64fy%%&%2=&3!g+oz%mi_o_7ay^*0naqv*o91^)a=diry^*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-f15d0.up.railway.app','127.0.0.1','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '.now.sh']
+
 
 
 # Application definition
@@ -108,6 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-da62.up.railway.app',
+    'https://*.now.sh',  # Optional, if you are using Now.sh domains
+]
+
 
 
 # Internationalization
