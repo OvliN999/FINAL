@@ -14,6 +14,10 @@ SECRET_KEY = 'django-insecure-naj64fy%%&%2=&3!g+oz%mi_o_7ay^*0naqv*o91^)a=diry^*
 DEBUG = False
 ALLOWED_HOSTS = ['web-production-da62.up.railway.app', '.vercel.app', 'localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-da62.up.railway.app',
+    'https://*.vercel.app'
+    ]
 # Application definition
 INSTALLED_APPS = [
     'jazzmin',
